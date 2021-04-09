@@ -26,6 +26,23 @@ public class LotteryTicket {
         ticketsSold++;
     }
 
+    public LotteryTicket(String name, int numVals, int maxVal, int[] choices) { // user's choice lotter ticket
+        this.name = name;
+        this.numVals = numVals;
+        this.maxVal = maxVal;
+        ticketsSold++;
+        picks = new ArrayList<Integer>();
+        for (int val : choices) {
+            {
+                picks.add(choices[val]);
+            }
+        }
+        if (!validate()) {
+            throw new IllegalStateException("ticket invalid");
+        }
+
+    }
+
     public boolean grandPrizeWinner(LotteryTicket winningTicket) {
         if (winningTicket.maxVal != this.maxVal) {
             throw new IllegalStateException("maxVal diff");
