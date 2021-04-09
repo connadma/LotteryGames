@@ -26,9 +26,9 @@ public class LotteryTicket {
         ticketsSold++;
     }
 
-    public LotteryTicket(String name, int numVals, int maxVal, int[] choices) { // user's choice lotter ticket
+    public LotteryTicket(String name, int maxVal, int[] choices) { // user's choice lotter ticket
         this.name = name;
-        this.numVals = numVals;
+        this.numVals = choices.length;
         this.maxVal = maxVal;
         ticketsSold++;
         picks = new ArrayList<Integer>();
