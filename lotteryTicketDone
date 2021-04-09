@@ -80,7 +80,7 @@ public class LotteryTicket {
     public boolean validate() {
         if (picks.size() != numVals)
             return false;
-        for (int i = picks.size() - 1; i > 0; i--) {
+        for (int i = picks.size() - 1; i >= 0; i--) {
             if (i != picks.indexOf(picks.get(i))) {
                 return false;
             }
@@ -96,11 +96,11 @@ public class LotteryTicket {
     }
 
     public static void main(String[] args) {
-        LotteryTicket ex = new LotteryTicket("exampleLottery", 6, 25);
+        LotteryTicket ex = new LotteryTicket("exampleLottery", 5, 69);
         int gamesPlayed = 0;
         boolean notRich = true;
         while (notRich) {
-            LotteryTicket winningTicket = new LotteryTicket("exampleLottery", 6, 25);
+            LotteryTicket winningTicket = new LotteryTicket("exampleLottery", 5, 69);
             gamesPlayed++;
             System.out.println("my ticket is " + ex);
             System.out.println("The winning ticket is " + winningTicket);
