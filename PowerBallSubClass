@@ -1,0 +1,12 @@
+public class PowerBall extends LotteryTicket {
+    int ticketMoney;
+
+    public PowerBall() {
+        super("PowerBall", 5, 69);
+        ticketMoney += 2;
+    }
+
+    public static void main(String[] args) {
+
+    }
+}
