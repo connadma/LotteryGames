@@ -1,9 +1,25 @@
 public class PowerBall extends LotteryTicket {
     int ticketMoney;
+    private int powerball;
+    private int numYears;
+    private int ticketsSold;
 
     public PowerBall() {
         super("PowerBall", 5, 69);
+        int r = (int) ((Math.random() * 26)) + 1;
+        powerball = r;
         ticketMoney += 2;
+        numYears = ticketsSold / 104;
+        this.picks.add(r);
+
+    }
+
+    public PowerBall(int[] whites, int red) {
+        super("Powerball", 69, whites);
+        powerball = red;
+        ticketMoney += 2;
+        numYears = ticketsSold / 104;
+        this.picks.add(r);
     }
 
     public static void main(String[] args) {
